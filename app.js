@@ -35,51 +35,6 @@ document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
 });
 
-// Efecto de hover mejorado para las tarjetas de proyecto
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(-5px) scale(1)';
-    });
-});
-
-// Cambio de color del header al hacer scroll
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    const scrollPosition = window.scrollY;
-    
-    if (scrollPosition > 100) {
-        header.style.background = 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))';
-    } else {
-        header.style.background = 'linear-gradient(135deg, var(--primary-color), var(--accent-color))';
-    }
-});
-
-// Animación para los elementos de experiencia al hacer hover
-document.querySelectorAll('.experience-item').forEach(item => {
-    item.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateX(10px)';
-        this.style.transition = 'transform 0.3s ease';
-    });
-    
-    item.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateX(0)';
-    });
-});
-
-// Contador de visitas simple
-if (!localStorage.getItem('visitCount')) {
-    localStorage.setItem('visitCount', '1');
-} else {
-    let count = parseInt(localStorage.getItem('visitCount'));
-    localStorage.setItem('visitCount', (count + 1).toString());
-}
-
-console.log(`¡Bienvenido! Esta es tu visita número ${localStorage.getItem('visitCount')} al portafolio de Santino Donato.`);
-
 // Efecto de typing en el título principal
 const title = document.querySelector('.header-content h1');
 const originalText = title.textContent;
@@ -97,26 +52,100 @@ function typeWriter() {
 window.addEventListener('load', function() {
     title.textContent = '';
     setTimeout(typeWriter, 500);
+    
+    // Aplicar efectos de brillo intermitente a los títulos
+    document.querySelectorAll('h2').forEach(h2 => {
+        setInterval(() => {
+            h2.style.textShadow = `0 0 10px rgba(14, 165, 233, ${Math.random() * 0.5 + 0.3})`;
+        }, 2000);
+    });
 });
 
-// Validación simple para formulario de contacto (si se añade en el futuro)
-function validateForm(formData) {
-    const errors = [];
+// Efecto de partículas en el header
+function createParticles() {
+    const header = document.querySelector('header');
+    const particlesContainer = document.createElement('div');
+    particlesContainer.style.position = 'absolute';
+    particlesContainer.style.top = '0';
+    particlesContainer.style.left = '0';
+    particlesContainer.style.width = '100%';
+    particlesContainer.style.height = '100%';
+    particlesContainer.style.pointerEvents = 'none';
+    particlesContainer.style.overflow = 'hidden';
+    particlesContainer.style.zIndex = '1';
     
-    if (!formData.name || formData.name.length < 2) {
-        errors.push('El nombre debe tener al menos 2 caracteres');
+    header.appendChild(particlesContainer);
+    
+    for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.style.position = 'absolute';
+        particle.style.width = '2px';
+        particle.style.height = '2px';
+        particle.style.backgroundColor = 'rgba(14, 165, 233, 0.7)';
+        particle.style.borderRadius = '50%';
+        particle.style.boxShadow = '0 0 10px rgba(14, 165, 233, 0.8)';
+        
+        // Posición aleatoria
+        const left = Math.random() * 100;
+        const top = Math.random() * 100;
+        particle.style.left = `${left}%`;
+        particle.style.top = `${top}%`;
+        
+        particlesContainer.appendChild(particle);
+        
+        // Animación
+        animateParticle(particle);
     }
-    
-    if (!formData.email || !formData.email.includes('@')) {
-        errors.push('Por favor ingresa un email válido');
-    }
-    
-    if (!formData.message || formData.message.length < 10) {
-        errors.push('El mensaje debe tener al menos 10 caracteres');
-    }
-    
-    return errors;
 }
+
+function animateParticle(particle) {
+    const duration = Math.random() * 10 + 10; // 10-20 segundos
+    const keyframes = [
+        { 
+            transform: 'translate(0, 0)',
+            opacity: 0
+        },
+        { 
+            transform: `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px)`,
+            opacity: 0.7
+        },
+        { 
+            transform: `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px)`,
+            opacity: 0
+        }
+    ];
+    
+    const options = {
+        duration: duration * 1000,
+        iterations: Infinity
+    };
+    
+    particle.animate(keyframes, options);
+}
+
+// Iniciar partículas
+createParticles();
+
+// Efecto de brillo en los bordes de las tarjetas al hacer hover
+document.querySelectorAll('.project-card, .experience-item, .skill-category').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.boxShadow = 'var(--shadow), 0 0 20px rgba(14, 165, 233, 0.6)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.boxShadow = 'var(--shadow)';
+    });
+});
+
+// Contador de visitas simple
+if (!localStorage.getItem('visitCount')) {
+    localStorage.setItem('visitCount', '1');
+} else {
+    let count = parseInt(localStorage.getItem('visitCount'));
+    localStorage.setItem('visitCount', (count + 1).toString());
+}
+
+console.log(`¡Bienvenido! Esta es tu visita número ${localStorage.getItem('visitCount')} al portafolio de Santino Donato.`);
 
 // Función para mostrar notificaciones
 function showNotification(message, type = 'info') {
@@ -130,14 +159,9 @@ function showNotification(message, type = 'info') {
     notification.style.color = 'white';
     notification.style.zIndex = '1000';
     notification.style.transition = 'all 0.3s ease';
-    
-    if (type === 'success') {
-        notification.style.backgroundColor = '#10b981';
-    } else if (type === 'error') {
-        notification.style.backgroundColor = '#ef4444';
-    } else {
-        notification.style.backgroundColor = '#3b82f6';
-    }
+    notification.style.background = 'linear-gradient(135deg, var(--primary-color), var(--accent-color))';
+    notification.style.boxShadow = 'var(--glow)';
+    notification.style.border = '1px solid rgba(14, 165, 233, 0.3)';
     
     document.body.appendChild(notification);
     
@@ -149,5 +173,7 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
-// Ejemplo de uso de la notificación
-// showNotification('¡Bienvenido al portafolio!', 'success');
+// Mostrar notificación de bienvenida
+setTimeout(() => {
+    showNotification('¡Bienvenido al portafolio de Santino Donato!', 'success');
+}, 1000);
