@@ -1,221 +1,149 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santino Donato | Desarrollador Front-End</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Santino Donato</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0d5b1a6.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <!-- Header/Hero Section -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <h1>Santino Donato</h1>
-                <p>+3 años de experiencia. Desarrollador Front-End y de videojuegos, y Diseñador UX/UI de Buenos Aires, Argentina 🇦🇷. Especializado en el desarrollo de páginas y/o aplicaciones web únicas.</p>
-                <a href="#contact" class="btn">Contáctame</a>
-            </div>
-        </div>
-    </header>
+<body data-bs-theme="dark">
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2>Sobre mí</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Soy Santino Donato, un apasionado desarrollador front-end y diseñador UX/UI con experiencia en la creación de aplicaciones web y videojuegos. Mi interés por la tecnología comenzó desde joven y he estado perfeccionando mis habilidades durante los últimos años.</p>
-                    <p>Actualmente, estoy ampliando mis conocimientos a través de estudios universitarios mientras trabajo en proyectos personales y colaboro en iniciativas innovadoras. Me encanta resolver problemas complejos y crear experiencias digitales que sean tanto funcionales como visualmente atractivas.</p>
-                    <p>Mi objetivo es continuar creciendo profesionalmente, trabajando en proyectos desafiantes que me permitan aplicar y expandir mis habilidades en desarrollo front-end, diseño de UX/UI y desarrollo de videojuegos.</p>
-                </div>
-                <div class="about-image">
-                    <div class="placeholder-image">[Imagen de perfil]</div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#inicio">Santino Donato</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobremi">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Experience Section -->
-    <section class="experience" id="experience">
-        <div class="container">
-            <h2>Experiencia laboral</h2>
-            
-            <div class="experience-item">
-                <h3>Cuidador de mascotas</h3>
-                <div class="experience-date">2025</div>
-                <p>Responsable del cuidado y bienestar de mascotas, incluyendo paseos, alimentación y administración de medicamentos cuando era necesario. Desarrollé habilidades de responsabilidad y gestión del tiempo.</p>
-            </div>
-            
-            <div class="experience-item">
-                <h3>Entregas de productos</h3>
-                <div class="experience-date">2023 - Actualidad</div>
-                <p>Gestión y entrega eficiente de productos, optimizando rutas y asegurando la satisfacción del cliente. Mejoré mis habilidades de comunicación y resolución de problemas en situaciones del mundo real.</p>
-            </div>
-            
-            <div class="experience-item">
-                <h3>Asistente de entrenador en escuela de básquet</h3>
-                <div class="experience-date">2022 - 2024</div>
-                <p>Asistí en la planificación y ejecución de sesiones de entrenamiento para jóvenes jugadores. Desarrollé habilidades de liderazgo, trabajo en equipo y comunicación efectiva.</p>
-            </div>
-            
-            <div class="experience-item">
-                <h3>Control ingreso a pileta</h3>
-                <div class="experience-date">2021</div>
-                <p>Responsable del control de acceso y seguridad en instalaciones deportivas. Aprendí a manejar situaciones bajo presión y a interactuar con diversos tipos de personas.</p>
-            </div>
-        </div>
-    </section>
+  <!-- INICIO -->
+  <section id="inicio" class="hero d-flex align-items-center justify-content-center text-center">
+    <div data-aos="fade-up">
+      <img src="https://randomuser.me/api/portraits/men/1.jpg" class="rounded-circle mb-3 perfil" alt="Foto de perfil">
+      <h1 class="fw-bold">Hola, soy Santino 👋</h1>
+      <p class="lead">Desarrollador web front-end apasionado por el diseño y la innovación digital.</p>
+      <a href="#proyectos" class="btn btn-primary mt-3">Ver mis proyectos</a>
+    </div>
+  </section>
 
-    <!-- Education Section -->
-    <section class="education" id="education">
-        <div class="container">
-            <h2>Estudios</h2>
-            
-            <div class="education-item">
-                <h3>Universidad</h3>
-                <p>CBC Lic. Kinesiología, UBA (en curso)</p>
-            </div>
-            
-            <div class="education-item">
-                <h3>Secundario</h3>
-                <p>ORT Belgrano, Especialidad TIC (COMPLETO)</p>
-            </div>
-            
-            <div class="education-item">
-                <h3>Primario</h3>
-                <p>Instituto Nuevos Aires (COMPLETO)</p>
-            </div>
-            
-            <div class="education-item">
-                <h3>Certificaciones</h3>
-                <p>CAE Advanced Exam y Anglia Exam</p>
-            </div>
+  <!-- EXPERIENCIA -->
+  <section id="experiencia" class="container py-5">
+    <h2 class="text-center mb-5">Experiencia</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="card h-100 bg-dark text-light border-0 shadow-sm p-3">
+          <h4>Front-End Developer</h4>
+          <p class="text-secondary">Freelance (2023 - Presente)</p>
+          <p>Diseño y desarrollo de sitios web modernos con HTML, CSS, JS y frameworks.</p>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <h2>Habilidades</h2>
-            
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Idiomas</h3>
-                    <ul class="skill-list">
-                        <li>Español (nativo)</li>
-                        <li>Portugués (intermedio)</li>
-                        <li>Inglés (intermedio)</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Tecnologías</h3>
-                    <ul class="skill-list">
-                        <li>Bootstrap</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>C++</li>
-                        <li>Git</li>
-                        <li>GitHub</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Habilidades Personales</h3>
-                    <ul class="skill-list">
-                        <li>Resolución de problemas</li>
-                        <li>Comunicación efectiva</li>
-                        <li>Trabajo en equipo</li>
-                        <li>Gestión del tiempo</li>
-                        <li>Atención al detalle</li>
-                    </ul>
-                </div>
-            </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 bg-dark text-light border-0 shadow-sm p-3">
+          <h4>Diseñador UI/UX</h4>
+          <p class="text-secondary">Proyecto personal (2022 - 2023)</p>
+          <p>Creación de interfaces centradas en la experiencia del usuario con Figma.</p>
         </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2>Proyectos</h2>
-            
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="placeholder-image">[Imagen del proyecto CalibraX]</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>CalibraX</h3>
-                        <p>Dispositivo de detección de fallas en gasoductos. La solución que proponemos es un dispositivo que detecte el momento, de qué manera y el lugar donde ocurren estos errores dentro de los caños.</p>
-                        <div class="project-tags">
-                            <span class="tag">Hardware</span>
-                            <span class="tag">IoT</span>
-                            <span class="tag">C++</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Código</a>
-                            <a href="#" class="project-link">Demo</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="placeholder-image">[Imagen del proyecto Shadow Showdown]</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Shadow Showdown</h3>
-                        <p>Videojuego de combate 1c1, online y local. Un emocionante juego de lucha con personajes únicos y mecánicas innovadoras que permite a los jugadores competir tanto en línea como localmente.</p>
-                        <div class="project-tags">
-                            <span class="tag">Videojuegos</span>
-                            <span class="tag">C++</span>
-                            <span class="tag">Multijugador</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Código</a>
-                            <a href="#" class="project-link">Demo</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="placeholder-image">[Imagen del proyecto MoovEye]</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>MoovEye</h3>
-                        <p>Aplicación web para el seguimiento y análisis de movimientos deportivos. Utiliza algoritmos de visión por computadora para proporcionar retroalimentación detallada sobre técnicas y rendimiento atlético.</p>
-                        <div class="project-tags">
-                            <span class="tag">Web App</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Computer Vision</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Código</a>
-                            <a href="#" class="project-link">Demo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 bg-dark text-light border-0 shadow-sm p-3">
+          <h4>Colaborador en proyectos</h4>
+          <p class="text-secondary">GitHub & Open Source</p>
+          <p>Participación en proyectos colaborativos y optimización de código.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="copyright">
-                    <p>© 2025 Santino Donato. Todos los derechos reservados</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#about">Sobre mí</a>
-                    <a href="#contact">Contacto</a>
-                </div>
+  <!-- PROYECTOS -->
+  <section id="proyectos" class="bg-section py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Proyectos</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="zoom-in">
+          <div class="card project-card bg-dark text-light border-0 shadow-sm">
+            <img src="https://picsum.photos/600/400?random=1" class="card-img-top" alt="Proyecto 1">
+            <div class="card-body">
+              <h5>Portfolio Personal</h5>
+              <p>Portfolio moderno con animaciones y diseño responsivo.</p>
             </div>
+          </div>
         </div>
-    </footer>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card project-card bg-dark text-light border-0 shadow-sm">
+            <img src="https://picsum.photos/600/400?random=2" class="card-img-top" alt="Proyecto 2">
+            <div class="card-body">
+              <h5>Landing Page</h5>
+              <p>Diseño para startup con enfoque en UI/UX y conversiones.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card project-card bg-dark text-light border-0 shadow-sm">
+            <img src="https://picsum.photos/600/400?random=3" class="card-img-top" alt="Proyecto 3">
+            <div class="card-body">
+              <h5>App de tareas</h5>
+              <p>Aplicación web para organizar tareas con almacenamiento local.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="app.js"></script>
+  <!-- SOBRE MI -->
+  <section id="sobremi" class="container py-5">
+    <h2 class="text-center mb-5">Sobre mí</h2>
+    <div class="row align-items-center">
+      <div class="col-md-5" data-aos="fade-right">
+        <img src="https://picsum.photos/500/500?random=4" class="img-fluid rounded-3 shadow" alt="Sobre mí">
+      </div>
+      <div class="col-md-7" data-aos="fade-left">
+        <p class="lead">Soy un joven apasionado por la tecnología y el diseño web. Me gusta aprender nuevas herramientas y crear experiencias digitales que inspiren. Trabajo con HTML, CSS, JavaScript y frameworks modernos.</p>
+        <p>Además de programar, disfruto explorar nuevas tendencias del desarrollo y compartir conocimientos con otros programadores.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="bg-section py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Contacto</h2>
+      <form class="contact-form mx-auto" data-aos="fade-up">
+        <div class="mb-3">
+          <input type="text" id="nombre" class="form-control" placeholder="Tu nombre" required>
+        </div>
+        <div class="mb-3">
+          <input type="email" id="email" class="form-control" placeholder="Tu correo" required>
+        </div>
+        <div class="mb-3">
+          <textarea id="mensaje" class="form-control" rows="4" placeholder="Tu mensaje" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Enviar mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-4 bg-dark text-secondary">
+    <p>© 2025 Santino Donato | Desarrollado con 💻 y ☕</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
