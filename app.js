@@ -1,4 +1,3 @@
-// Smooth scrolling para navbar flotante
 document.querySelectorAll('.floating-nav a').forEach(anchor => {
     anchor.addEventListener('click', e => {
         e.preventDefault();
@@ -12,9 +11,6 @@ document.querySelectorAll('.floating-nav a').forEach(anchor => {
     });
 });
 
-
-
-// Animación de aparición
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -31,16 +27,15 @@ document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
 });
 
-// Efectos al cargar
 window.addEventListener('load', () => {
-    // Brillo intermitente en títulos
+ 
     document.querySelectorAll('h2').forEach(h2 => {
         setInterval(() => {
             h2.style.textShadow = `0 0 10px rgba(14, 165, 233, ${Math.random() * 0.5 + 0.3})`;
         }, 2000);
     });
     
-    // Crear partículas
+ 
     const header = document.querySelector('header');
     const particlesContainer = document.createElement('div');
     Object.assign(particlesContainer.style, {
@@ -59,7 +54,7 @@ window.addEventListener('load', () => {
         });
         particlesContainer.appendChild(particle);
         
-        // Animación de partículas
+ 
         particle.animate([
             { transform: 'translate(0, 0)', opacity: 0 },
             { transform: `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px)`, opacity: 0.7 },
@@ -68,7 +63,7 @@ window.addEventListener('load', () => {
     }
 });
 
-// Efectos hover en tarjetas
+
 document.querySelectorAll('.project-card, .experience-item, .skill-category').forEach(card => {
     card.addEventListener('mouseenter', () => card.style.boxShadow = 'var(--shadow), 0 0 20px rgba(14, 165, 233, 0.6)');
     card.addEventListener('mouseleave', () => card.style.boxShadow = 'var(--shadow)');
@@ -76,7 +71,6 @@ document.querySelectorAll('.project-card, .experience-item, .skill-category').fo
 
 
 
-// Notificación de bienvenida
 setTimeout(() => {
     const notification = document.createElement('div');
     notification.textContent = '¡Bienvenido al portafolio de Santino Donato!';
@@ -89,7 +83,7 @@ setTimeout(() => {
     });
     document.body.appendChild(notification);
     
-    // Animación de entrada
+
     setTimeout(() => {
         notification.style.opacity = '1';
         notification.style.transform = 'translateX(0)';
