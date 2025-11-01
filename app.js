@@ -1,16 +1,3 @@
-document.querySelectorAll('.floating-nav a').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(anchor.getAttribute('href'));
-        if (target) {
-            window.scrollTo({
-                top: target.offsetTop - 20,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
